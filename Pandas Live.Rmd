@@ -1,0 +1,208 @@
+---
+title: "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd Edition"
+author: "Ali Nemati"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y , %H:%M:%S')`"
+fontsize: 12pt
+output:
+  html_document:
+    includes: null
+    number_sections: true
+    toc: yes
+    toc_float: true
+    toc_depth: 5
+  pdf_document:
+    includes: null
+    number_sections: true
+    toc: yes
+    toc_depth: 5
+    latex_engine: xelatex
+  word_document:
+    toc: yes
+    toc_depth: 5
+urlcolor: blue
+tables: true
+graphics: yes
+linkcolor: red
+# header-includes:
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[CO,CE]{Created by Ali Nemati}
+- \fancyfoot[CO,CE]{linkedin.com/in/ali-nemati}
+- \fancyfoot[LE,RO]{\thepage}
+- \usepackage{hyperref}
+- \usepackage{xcolor}
+- \hypersetup{frenchlinks=true, colorlinks = TRUE,  urlcolor = blue, pdfborder={0 0 1}} 
+link-citations: yes
+ident: True
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+\newpage
+
+# Horizontal Bar Chart Races
+
+```{python}
+import pandas_alive
+path ="/Users/parsanemati/Yandex.Disk.localized/github/data_science_eda/pandas_live/"
+covid_df = pandas_alive.load_dataset()
+covid_df.plot_animated(
+    filename=path + 'examples/perpendicular-example.gif', perpendicular_bar_func='mean' ,period_length=50 , dpi=45)
+```
+
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/perpendicular-example.gif')
+```
+# Vertical Bar Chart Races
+
+```{python}
+covid_df.plot_animated(
+    filename=path + 'examples/example-barv-chart.gif', orientation='v' , period_length=50 , dpi=45)
+```
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-barv-chart.gif')
+```
+
+#  Line Charts
+
+With as many lines as data columns in the DataFrame.
+
+
+
+```{python}
+
+
+covid_df.diff().fillna(0).plot_animated(filename=path + 'examples/example-line-chart.gif',
+                                        kind='line', period_label={'x': 0.25, 'y': 0.9} ,
+                                        period_length=50 , dpi=45)
+
+```
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-line-chart.gif')
+```
+
+# Bar Charts
+Similar to line charts with time as the x-axis.
+
+```{python}
+import pandas_alive
+
+
+covid_df.sum(axis=1).fillna(0).plot_animated(filename=path +  'examples/example-bar-chart.gif', kind='bar',
+                                             period_label={'x': 0.1, 'y': 0.9},
+                                             enable_progress_bar=True, steps_per_period=2, interpolate_period=True, period_length=50 , dpi=45
+                                             )
+
+```
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-bar-chart.gif')
+```
+
+# Scatter Charts
+
+
+
+```{python}
+
+import pandas as pd
+import pandas_alive
+
+max_temp_df = pd.read_csv(
+    path + "data/Newcastle_Australia_Max_Temps.csv",
+    parse_dates={"Timestamp": ["Year", "Month", "Day"]},
+)
+
+min_temp_df = pd.read_csv(
+    path + "data/Newcastle_Australia_Min_Temps.csv",
+    parse_dates={"Timestamp": ["Year", "Month", "Day"]},
+)
+
+merged_temp_df = pd.merge_asof(max_temp_df, min_temp_df, on="Timestamp")
+
+merged_temp_df.index = pd.to_datetime(
+    merged_temp_df["Timestamp"].dt.strftime('%Y/%m/%d'))
+
+keep_columns = [
+    "Minimum temperature (Degree C)", "Maximum temperature (Degree C)"]
+
+merged_temp_df[keep_columns].resample("Y").mean().plot_animated(
+    filename=path + 'examples/example-scatter-chart.gif', kind="scatter", title='Max & Min Temperature Newcastle, Australia' , period_length=50 , dpi=45)
+```
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-scatter-chart.gif')
+```
+
+# Pie Charts
+
+
+
+```{python}
+
+
+
+covid_df.plot_animated(filename=path+ 'examples/example-pie-chart.gif',
+                       kind="pie", rotatelabels=True, period_label={'x': 0, 'y': 0} ,
+                       period_length=50 , dpi=45)
+```
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-pie-chart.gif')
+```
+
+# Bubble Charts
+
+Bubble charts are generated from a multi-indexed dataframes. Where the index is the time period (optional) and the axes are defined with x_data_label & y_data_label which should be passed a string in the level 0 column labels.
+When you set color_data_label= to a df column name, pandas_alive will automatically add a colorbar.
+
+
+```{python}
+import pandas_alive
+
+multi_index_df = pd.read_csv(path + "data/multi.csv", header=[0, 1], index_col=0)
+
+multi_index_df.index = pd.to_datetime(multi_index_df.index, dayfirst=True)
+
+map_chart = multi_index_df.plot_animated(
+    kind="bubble",
+    filename=path + "examples/example-bubble-chart.gif",
+    x_data_label="Longitude",
+    y_data_label="Latitude",
+    size_data_label="Cases",
+    color_data_label="Cases",
+    vmax=5, steps_per_period=3, interpolate_period=True, period_length=500,
+    dpi=45
+)
+
+```
+
+
+```{python}
+
+from IPython.display import Image
+Image(url=path + 'examples/example-bubble-chart.gif')
+```
+
