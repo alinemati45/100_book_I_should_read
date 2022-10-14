@@ -1,4 +1,5 @@
 # 100 BOOK I SHOULD READ
+
 ## 1. Top Machine Learning Interview Questions and Answers
 
 [Github.com](https://github.com/alinemati45/Top-Machine-Learning-Interview-Questions-and-Answers)
@@ -17,59 +18,27 @@
 
 [RPUB.com](https://rpubs.com/alinemati/Designing_Machine_Learning_Systems)
 
-## Data Science saedsayad
+## 4. Data Science saedsayad
 
 [Github.com](https://github.com/alinemati45/data_science_summary_book/tree/main/Data%20Science%20saedsayad)
 
 [RPUB.com](https://rpubs.com/alinemati/Data_Science_and_Biomarkers_Discovery_with_Dr_Saed_Sayad)
 
-##
 
-[Github.com]()
 
-[RPUB.com]()
 
-##
+## 4. Python Date Analysis Third Edition By Avinash Navlani  Armando Fandango  Ivan Idris
 
-[Github.com]()
+[Github.com](https://github.com/alinemati45/book_summary/tree/main/Python%20Date%20Analysis%20Third%20Edition%20-%20By%20Avinash%20Navlani%20%20Armando%20Fandango%20%20Ivan%20Idris)
 
 [RPUB.com]()
 
-##
 
-[Github.com]()
+## 5.Python for Data Analysis, 3rd Edition Wes McKinney
 
-[RPUB.com]()
+[Github.com](https://github.com/alinemati45/book_summary/tree/main/Python%20Data%20Science%20Handbook%20by%20Jake%20VanderPlas)
 
-##
-
-[Github.com]()
-
-[RPUB.com]()
-
-##
-
-[Github.com]()
-
-[RPUB.com]()
-
-##
-
-[Github.com]()
-
-[RPUB.com]()
-
-##
-
-[Github.com]()
-
-[RPUB.com]()
-
-##
-
-[Github.com]()
-
-[RPUB.com]()
+[RPUB.com](https://rpubs.com/alinemati/Python_for_Data_Analysis)
 
 # Data Science EdA and Library
 
@@ -80,4 +49,50 @@
 
 [RPUB.com](https://rpubs.com/alinemati/Pandas_live)
 
-## 
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
+
+##
+
+[Github.com]()
+
+[RPUB.com]()
